@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--这是一个spring配置文件-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -29,7 +30,7 @@
     <mvc:annotation-driven />
 
     <!-- 静态资源处理， css， js， imgs -->
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
 
 
     <!-- 配置ViewResolver。 可以用多个ViewResolver。 使用order属性排序。 InternalResourceViewResolver放在最后。 -->
@@ -55,10 +56,8 @@
         <!--<property name="ignoreAcceptHeader" value="true" />-->
     <!--</bean>-->
 
-    <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass"
-                  value="org.springframework.web.servlet.view.JstlView" />
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
         <property name="prefix" value="/WEB-INF/jsps/" />
         <property name="suffix" value=".jsp" />
     </bean>
