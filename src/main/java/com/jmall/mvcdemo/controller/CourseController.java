@@ -48,10 +48,9 @@ public class CourseController {
 		return "course_overview";
 	}
 	
-	//本方法将处理 /courses/view2/123 形式的URL
-	@RequestMapping("/view2/{courseId}")
-	public String viewCourse2(@PathVariable("courseId") Integer courseId,
-			Map<String, Object> model) {
+	//本方法将处理 /courses/view2/123 形式的URL  RESTful风格的url
+	@RequestMapping(value = "/view2/{courseId}")
+	public String viewCourse2(@PathVariable("courseId") Integer courseId, Map<String, Object> model) {
 		
 		log.debug("In viewCourse2, courseId = {}", courseId);
 		Course course = courseService.getCoursebyId(courseId);
