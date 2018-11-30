@@ -40,8 +40,6 @@ public class CourseController {
 	//本方法将处理 /courses/view?courseId=123 形式的URL
 	@RequestMapping(value="/view", method= RequestMethod.GET) // 方法级别的Mapping
 	public String viewCourse(@RequestParam("courseId") Integer courseId, Model model) {
-		
-		
 		log.debug("In viewCourse, courseId = {}", courseId);
 		Course course = courseService.getCoursebyId(courseId);
 		model.addAttribute(course);
