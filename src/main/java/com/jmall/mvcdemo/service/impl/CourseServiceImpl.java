@@ -15,7 +15,6 @@ public class CourseServiceImpl implements CourseService {
 	public Course getCoursebyId(Integer courseId) {
 		
 		Course course = new Course();
-		
 		course.setCourseId(courseId);
 		course.setTitle("深入浅出Java多线程");
 		course.setImgPath("resources/imgs/course-img.jpg");
